@@ -13,7 +13,7 @@ public class ApacheComponentsHttpClientIntegrationTest {
         assertTrue(httpResponse.isOK());
         assertEquals(httpResponse.getStatusCode(), 200);
         assertNotNull(httpResponse.getBody());
-        assertNotEquals(httpResponse.getReasonPhrase(), "OK");
+        assertEquals(httpResponse.getReasonPhrase(), "OK");
     }
 
     @Test(expected = HttpClientException.class)
