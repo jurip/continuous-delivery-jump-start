@@ -9,7 +9,7 @@ public class ApacheComponentsHttpClientIntegrationTest {
 
     @Test
     public void canMakeSuccessfulGetCall() {
-        HttpResponse httpResponse = httpClient.get("http://www.google.com");
+        HttpResponse httpResponse = httpClient.get("http://www.ya.ru");
         assertTrue(httpResponse.isOK());
         assertEquals(httpResponse.getStatusCode(), 200);
         assertNotNull(httpResponse.getBody());
