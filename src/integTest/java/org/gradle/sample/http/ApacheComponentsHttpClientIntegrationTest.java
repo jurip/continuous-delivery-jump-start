@@ -16,6 +16,15 @@ public class ApacheComponentsHttpClientIntegrationTest {
         assertEquals(httpResponse.getReasonPhrase(), "OK");
     }
 
+    @Test
+    public void canMakeSuccessfulGetCall2() {
+        HttpResponse httpResponse = httpClient.get("http://www.ya.ru");
+        assertTrue(httpResponse.isOK());
+        assertEquals(httpResponse.getStatusCode(), 200);
+        assertNotNull(httpResponse.getBody());
+        assertEquals(httpResponse.getReasonPhrase(), "OK");
+    }
+
     @Test(expected = HttpClientException.class)
     public void throwsExceptionForGetCallWithUnknownURL() {
         httpClient.get("http://www.unknown-url-234ndasdfq34234151351345sdf.com");
